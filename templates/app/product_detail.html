@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="margin-left">
+    <h2>Товар {{ object.name }}</h2>
+    <img src="{{ MEDIA_URL }}{{ object.img.url }}" class="preview">
+    <h4>Обзоры:</h4>
+    <ul>
+        {% for review in reviews %}
+            <li><p>{{review.text}}</p></li>
+        {% endfor %}
+    </ul>
+    {% if is_review_exist %}
+        <p>Вы уже оставляли отзыв!</p>
+    {% else %}
+        <p>Можете добавить обзор:</p>
+
+        <form action="{% url 'product_detail' product.id %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <br>
+            <input type="submit" value="Отправить отзыв"/>
+        </form>
+
+    {% endif %}
+
+
+</div>
+{% endblock %}

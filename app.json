@@ -1,0 +1,18 @@
+[
+{
+  "model": "app.product",
+  "pk": 1,
+  "fields": {
+    "name": "Chair",
+    "img": "images/2018/09/29/gkehh.jpg"
+  }
+},
+{
+  "model": "app.product",
+  "pk": 2,
+  "fields": {
+    "name": "Table",
+    "img": "images/2018/09/29/46511d3ce6fdeb66a99216c6ae5dd415.jpg"
+  }
+}
+]
